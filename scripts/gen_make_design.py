@@ -125,20 +125,20 @@ def create_makefile():
         makefile.write('\t--env DISPLAY=${DISPLAY} \\\n')
         makefile.write('\t-v /tmp/.X11-unix:/tmp/.X11-unix \\\n')
         makefile.write('\t--privileged \\\n')
-        makefile.write('\t--workdir=/OpenROAD-flow-scripts/flow/vodice24-asic-opt \\\n')
+        makefile.write('\t--workdir=/OpenROAD-flow-scripts/flow/proact-asic-opt \\\n')
         makefile.write('\t-v ${HOME}/.Xauthority:/root/.Xauthority:rw \\\n')
         makefile.write('\t-v /usr/share/X11/xkb:/usr/share/X11/xkb \\\n')
-        makefile.write('\t-v ${HOME}/vodice24-asic-opt:/OpenROAD-flow-scripts/flow/vodice24-asic-opt \\\n')
+        makefile.write('\t-v ${HOME}/proact-asic-opt:/OpenROAD-flow-scripts/flow/proact-asic-opt \\\n')
         makefile.write('\tcrypto-asic-opt bash --rcfile ./scripts/ps1.prompt\n')
         makefile.write('\n')
 
 
         makefile.write('chip: \n')
-        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=vodice24-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ')\n')
+        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=proact-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ')\n')
         makefile.write('\n')
 
         makefile.write('chipgui: chip\n')
-        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=vodice24-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ' gui_final)\n')
+        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=proact-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ' gui_final)\n')
         makefile.write('\n')
 
         makefile.write('chipdata: chip\n')
@@ -146,7 +146,7 @@ def create_makefile():
         makefile.write('\n')
 
         makefile.write('chipclean: \n')
-        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=vodice24-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ' clean_all)\n')
+        makefile.write('\t(source ../../../../env.sh && cd ../../.. && make DESIGN_CONFIG=proact-asic-opt/' + FOLDER + '/chip/' + CHIPCONFIG + ' clean_all)\n')
         makefile.write('\n')
 
 def create_synthys():
